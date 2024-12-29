@@ -64,10 +64,11 @@ INNER JOIN
 WHERE 
     start_date_meta.meta_value BETWEEN 
         (CAST('%jsf_filter_query|meta|start_date||plain%{"fallback":"1131097600","context":""}' AS UNSIGNED) - 86400)
-        AND CAST('%jsf_filter_query|meta|end_date||plain%{"fallback":"2147483647","context":""}' AS UNSIGNED)
-    AND rating_meta.meta_value >= CAST('%jsf_filter_query|meta|rating||plain%{"fallback":"0","context":""}' AS UNSIGNED)
+        AND '%jsf_filter_query|meta|end_date||plain%{"fallback":"2147483647","context":""}' 
+    AND rating_meta.meta_value >= '%jsf_filter_query|meta|rating||plain%{"fallback":"0","context":""}'
 ORDER BY 
     start_date_meta.meta_value ASC;
+
 
 
 
